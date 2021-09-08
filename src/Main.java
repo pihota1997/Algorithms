@@ -16,13 +16,13 @@ public class Main {
         while (currentWeight < knapsack && i < items.length) {
             if (items[i].getWeight() + currentWeight < knapsack) {
                 currentWeight += items[i].getWeight();
-                knapsackPrice+=items[i].getPrice();
+                knapsackPrice += items[i].getPrice();
                 System.out.println(items[i].getWeight() + ":" + items[i].getPrice());
                 i++;
             } else {
                 double itemiWeightInKnapsack = knapsack - currentWeight;
                 double itemIPriceInKnapsack = itemiWeightInKnapsack * items[i].pricePerWeight();
-                knapsackPrice+=itemIPriceInKnapsack;
+                knapsackPrice += itemIPriceInKnapsack;
                 System.out.println(itemiWeightInKnapsack + ":" + itemIPriceInKnapsack);
                 currentWeight += itemiWeightInKnapsack;
             }
